@@ -7,11 +7,8 @@ on:
     branches: [ "master" ]
 
 jobs:
-
-  build_and_deploy:
-
+  build_and_push:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
@@ -20,12 +17,8 @@ jobs:
 
       # Authenticate with the container registry (replace <YOUR_REGISTRY> with your registry URL)
       - name: Log in to Container Registry
-        run: echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login <YOUR_REGISTRY> --username "${{ secrets.REGISTRY_USERNAME }}" --password-stdin
+        run: echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login -u "piran94" --username "${{ secrets.REGISTRY_USERNAME }}" --password-stdin
 
       # Push the Docker image to the container registry
       - name: Push Docker image
         run: docker push <YOUR_REGISTRY>/webapp:latest
-
-      # Deploy the Docker image to your target environment (replace <YOUR_DEPLOYMENT_COMMAND> with your deployment command)
-      - name: Deploy Docker image
-        run: <YOUR_DEPLOYMENT_COMMAND>
