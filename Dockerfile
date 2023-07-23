@@ -1,2 +1,2 @@
 FROM nginx:latest
-RUN ./webapp /usr/share/nginx/html/
+RUN /usr/share/nginx/html/
