@@ -13,6 +13,6 @@ jobs:
 
       # Modify the following line to use the "gitActionPractice" directory
       - name: Build the Docker image
-        run: docker build -f gitActionPractice/Dockerfile -t webapp:latest .
+        run: docker build -t webapp:latest .
 
 
