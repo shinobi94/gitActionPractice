@@ -1,2 +1,2 @@
 FROM nginx:latest
-COPY ./webapp /usr/share/nginx/html/
+COPY gitActionPractice /usr/share/nginx/html/
