@@ -10,6 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: List contents of the webapp directory
+        run: ls -la webapp
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag webapp:latest --no-cache
+        run: docker build . --file Dockerfile --tag webapp:latest
+        
+      - name: List contents of /usr/share/nginx/html/ directory
+        run: docker run --rm -it webapp:latest ls -la /usr/share/nginx/html/
+
