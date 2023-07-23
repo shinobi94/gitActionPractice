@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Modify the following line to use the "gitActionPractice" directory
       - name: Build the Docker image
-        run: docker build -t webapp:latest .
+        run: docker build -t webapp:latest -t webapp:${{ github.sha }} .
+
 
 
