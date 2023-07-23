@@ -1,3 +1,8 @@
+# Use the official Nginx base image
 FROM nginx:latest
-ADD . /usr/share/nginx/html/
+
+# Copy the entire project directory to the Nginx HTML root
+COPY . /usr/share/nginx/html/
+
+
 
