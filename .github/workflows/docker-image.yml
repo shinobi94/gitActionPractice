@@ -21,4 +21,4 @@ jobs:
 
       # Push the Docker image to the container registry
       - name: Push Docker image
-        run: docker push <YOUR_REGISTRY>/webapp:latest
+        run: docker push piran94/webapp:latest
