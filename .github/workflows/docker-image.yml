@@ -1,4 +1,4 @@
-name: Build and Push Docker Image to Docker Hub
+name: Build, Push, and Run Docker Image on Docker Hub
 
 on:
   push:
@@ -25,3 +25,5 @@ jobs:
       - name: Pull the Docker image to Docker Desktop
         run: docker pull piran94/new-webapp:latest
 
+      - name: Run the Docker container
+        run: docker run -d -p 4008:80 piran94/new-webapp:latest
