@@ -21,3 +21,7 @@ jobs:
 
       - name: Push the Docker image to Docker Hub
         run: docker push piran94/new-webapp:latest
+
+      - name: Pull the Docker image to Docker Desktop
+        run: docker pull piran94/new-webapp:latest
+
