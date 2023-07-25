@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    node {
-      label 'agent-docker-alpine'
-    }
-
-  }
+  agent any
   stages {
     stage('checkout code') {
       steps {
-        git 'https://github.com/shinobi94/gitActionPractice.git'
+        git(url: 'https://github.com/shinobi94/gitActionPractice.git', changelog: true)
       }
     }
 
