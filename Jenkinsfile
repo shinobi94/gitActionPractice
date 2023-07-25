@@ -7,9 +7,9 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
-        echo 'step 2'
+        sh 'ls -la'
       }
     }
 
